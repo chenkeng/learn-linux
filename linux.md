@@ -6,231 +6,116 @@
     * 命令所在路径：/bin/ls
     * 执行权限：所有用户
     * 语法：  ls  选项[-ald]  [文件或目录]
-        -a    显示所有文件，包括隐藏文件
-        -l  详细信息显示
-        -d  查看目录属性
-        $ ls –a > dir.txt ← 将ls –a命令执行结果输出到dir.txt文件。
-        $ ls –a >> dir.txt ← 将ls –a命令执行结果附加到dir.txt文件之后。
+        * -a    显示所有文件，包括隐藏文件
+        * -l  详细信息显示
+        * -d  查看目录属性
+        * $ ls –a > dir.txt ← 将ls –a命令执行结果输出到dir.txt文件。
+        * $ ls –a >> dir.txt ← 将ls –a命令执行结果附加到dir.txt文件之后。  
 
-
-2. 文件处理命令：cd
-功能描述：切换目录
-命令英文原意：change directory
-命令所在路径：shell内置命令
-执行权限：所有用户
-语法：cd [目录]
-范例：  $ cd  / 切换到根目录
-$ cd    。。 回到上一级目录
+2.  文件处理命令：cd
+  - 功能描述：切换目录
+  - 命令英文原意：change directory
+  - 命令所在路径：shell内置命令
+  - 执行权限：所有用户
+  - 语法：cd [目录]
+      * 范例：  $ cd  / 切换到根目录
+      * $ cd    。。 回到上一级目录    
 
 3. 文件处理命令：pwd
-功能描述：显示当前所在的工作目录
-命令英文原意：print working directory
-命令所在路径：/bin/pwd
-执行权限：所有用户
-语法：pwd
-范例：  $ pwd
-/etc/rc5.d
+   * 功能描述：显示当前所在的工作目录
+   * 命令英文原意：print working directory
+   * 命令所在路径：/bin/pwd
+   * 执行权限：所有用户
+   * 语法：pwd
+        * 范例：  $ pwd
+        * /etc/rc5.d
 
 4. 文件处理命令：touch
-
-功能描述：创建空文件
-
-
-
-命令名称：touch
-
-命令所在路径：/bin/touch
-
-执行权限：所有用户
-
-语法：touch  [文件名]
-
-范例：$ touch newfile
+  * 功能描述：创建空文件
+  * 命令名称：touch
+  * 命令所在路径：/bin/touch
+  * 执行权限：所有用户
+  * 语法：touch  [文件名]
+      * 范例：$ touch newfile
 
 
-
-
-
-文件处理命令：mkdir
-
+5. 文件处理命令：mkdir
 功能描述：创建新目录
-
-
-
 命令英文原意：make directories
-
 命令所在路径：/bin/mkdir
-
 执行权限：所有用户
-
 语法：mkdir  [目录名]
-
 范例：$ mkdir newdir
-
-
-
-
-
 文件处理命令：cp
-
 功能描述：复制文件或目录
 
-
-
-命令英文原意：copy
-
+6. 命令英文原意：copy
 命令所在路径：/bin/cp
-
 执行权限：所有用户
-
 语法：    cp  -R  [源文件或目录] [目的目录]
-
               -R      复制目录
-
 范例：    $ cp  file1 file2  dir1
-
               将文件file1、file2复制到目录dir1
-
 $ cp  -R dir1 dir2
-
               将dir1下的所有文件及子目录复制到dir2
 
-
-
-
-
-文件处理命令：mv
-
+7. 文件处理命令：mv
 功能描述：移动文件、更名
-
-
-
 命令英文原意：move
-
 命令所在路径：/bin/mv
-
 执行权限：所有用户
-
 语法：mv  [源文件或目录]  [目的目录]
-
 范例：    $ mv  file1 file3
-
               将当前目录下文件file1更名为file3
-
 $ mv  file2  dir2
-
 将文件file2移动到目录dir2下
 
-
-
-
-
-文件处理命令：rm
-
+8. 文件处理命令：rm
 功能描述：删除文件
-
-
-
 命令英文原意：remove
-
 命令所在路径：/bin/rm
-
 执行权限：所有用户
-
 语法：rm  -r   [文件或目录]
-
                 -r        删除目录
-
 范例：    $ rm file3
-
               删除文件file3
-
               $ rm -r dir1
-
               删除目录dir1
-
-
-
-
-
-文件处理命令：cat
+9. 文件处理命令：cat
 
 功能描述：显示文件内容
-
-
-
 命令英文原意：concatenate and display files
-
 命令所在路径：/bin/cat
-
 执行权限：所有用户
-
 语法：cat [文件名]
-
 范例：    $ cat  /etc/issue
-
               $ cat  /etc/services
-
               $ cat preface.txt 　more
-
               逐页显示preface.txt的内容;
-
               $ cat preface.txt >> outline.txt
-
               将preface.txt 附加到outline.txt文件之后;
-
               cat new.txt info.txt >readme.txt
-
               将new.txt和info.txt合并成readme.txt文件;
 
-
-
-
-
-文件处理命令：more
-
+10. 文件处理命令：more
 命令所在路径：/bin/more
-
 执行权限：所有用户
-
 语法：more  [文件名]
-
        (空格) 或f           显示下一页
-
        (Enter)           显示下一行
-
 q或Q            退出
-
-
-
-
-
-文件处理指令：head
+11. 文件处理指令：head
 
 功能描述：查看文件的前几行
-
-
-
 指令所在路径：/bin/head
-
 执行权限：All User
-
 语法：    head  -num  [文件名]
-
               -num  显示文件的前num行
-
 范例：$ head  -20  /etc/services
 
-
-
-
-
-文件处理指令：tail
+12. 文件处理指令：tail
 
 功能描述：查看文件的后几行
-
-
-
 指令所在路径：/bin/tail
 
 执行权限：All User
@@ -242,100 +127,49 @@ q或Q            退出
 -f            动态显示文件内容
 
 范例：$ tail  -30  /etc/services
-
-
-
-
-
-文件处理命令：ln
+13. 文件处理命令：ln
 
 功能描述：产生链接文件
-
-
-
 命令英文原意：link
-
 命令所在路径：/bin/ln
-
 执行权限：所有用户
-
 语法：    ln  -s  [源文件]  [目标文件]
-
               -s  创建软链接
-
 范例：    $ ln -s  /etc/issue  /issue.soft
-
               创建文件/etc/issue的软链接/issue.soft
-
               $ ln  /etc/issue  /issue.hard
-
               创建文件/etc/issue的硬链接/issue.hard
 
-
-
-
-
-权限管理命令：chmod
+14. 权限管理命令：chmod
 
 功能描述：改变文件或目录权限
-
-
-
 命令英文原意：change the permissions mode of a file
-
 命令所在路径：/bin/chmod
-
 执行权限：所有用户
-
 语法：chmod  [{ugo}{+-=}{rwx}] [文件或目录]
-
 [mode=421 ]  [文件或目录]
-
 范例：    $ chmod  g+w  file1
-
               赋予文件file1所属组写权限
-
               $ chmod  777  dir1
-
               设定目录dir1为所有用户具有全部权限
-
 代表字符
-
 权限
-
 对文件的含义
-
 对目录的含义
-
 r
-
 读权限
-
 可以查看文件内容
-
 可以列出目录中的内容
-
 w
-
 写权限
-
 可以修改文件内容
-
 可以在目录中创建、删除文件
-
 x
-
 执行权限
-
 可以执行文件
-
 可以进入目录
 
-
-
-
-
-权限管理命令：chown
+15. 权限管理命令：chown
 
 功能描述：改变文件或目录的所有者
 
