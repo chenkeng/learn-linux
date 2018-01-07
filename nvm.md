@@ -51,7 +51,6 @@ git checkout master // 切换回主分支
 git log --oneline // 查看分支情况
 // git changge master branch 2 //
 git checkout master // 切换回主分支
-// change rich branch /////
 git log --oneline // 查看分支情况
 git log --all --oneline // 将所有分支情况显示到一行上
 git log --oneline --all -graph  // 图形化显示
