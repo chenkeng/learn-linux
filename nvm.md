@@ -45,9 +45,9 @@ git tag -a 标签名字 -m 为什么打标签说明 数字版本号
 ```
 
 git branch feature // 新建分支
-
+// rich branch addd ...
 git checkout master // 切换回主分支
-
+// change rich branch /////
 git log --oneline // 查看分支情况
 
 git log --all --oneline // 将所有分支情况显示到一行上
