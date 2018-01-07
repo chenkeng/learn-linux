@@ -50,8 +50,6 @@ git checkout master // 切换回主分支
 //the third
 git log --oneline // 查看分支情况
 // git changge master branch 2 //
-
-// rich branch addd ...
 git checkout master // 切换回主分支
 // change rich branch /////
 git log --oneline // 查看分支情况
