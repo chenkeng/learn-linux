@@ -1007,3 +1007,30 @@ du -sh uploadfile
 17查看磁盘使用情况
 
 df -hl
+
+cat file  // 从第一个字节开始查看文件
+tac file // 从最后一行开始反向查看一个文件
+
+head -2 file // 查看一个文件的前2行
+tail -3 file // 查看一个文件的最后3行
+
+more file // 查看一个发文件的内容
+vi file // 打开并浏览一个文件
+
+
+grep  str file // 在file 中查找 str 字符串 。 匹配所有的
+grep ^str file // 在file 中查找以str 开头的行
+grep [0-9] file1 // 查找file 中所有包含数字的行
+grep str -r /dir/*  // 在dir 目录及其子目录中查找字符串 str
+diff file1 file2	// 找出两个文件的不同处
+sdiff file1 file2	// 以对比的方式显示两个文件的不同
+
+———————————————————————————————————————————————————
+* vi file
+操作 |	解析
+----|----
+i |	进入编辑文本模式
+Esc |	退出编辑文本模式
+:w	| 保存当前修改
+:q	| 不保存退出vi
+:wq	 | 保存当前修改并退出vi
