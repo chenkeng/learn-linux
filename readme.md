@@ -936,7 +936,7 @@ which bin
 
 13. grep，find
 grep:文本内容搜索;find:文件或者目录名以及权限属主等匹配搜索
-eg: grep success * 　　 /*查找当前目录下面所有文件里面含有success字符的文件
+eg: grep success * 　　 /* 查找当前目录下面所有文件里面含有success字符的文件
 
 14. kill 可以杀死某个正在进行或者已经是dest状态的进程
 eg; ps ax
@@ -952,7 +952,7 @@ eg: tar -zxvf nmap-3.45.tgz //将这个解压到nmap-3.45这个目录里
 
 
 
-14解压小全
+14. 解压小全
 tar -I或者bunzip2命令都可以解压.bz2文件
 tar xvfj example.tar.bz2
 tar xvfz example.tar.gz
@@ -960,25 +960,25 @@ tar xvfz example.tgz
 tar xvf example.tar
 unzip example.zip
 
-15 如何配置让哪些服务启动(天外闲云，q1208c)
+15. 如何配置让哪些服务启动(天外闲云，q1208c)
 方法1 运行ntsysv或者setup命令，进入菜单进行配置
 方法2 chkconfig --list 显示服务
 chkconfig name on/off 打开/关闭“name”服务
 
 
-16查看文件夹大小
+16. 查看文件夹大小
 
 du -sh uploadfile
 
-17查看磁盘使用情况
+17. 查看磁盘使用情况
 
 df -hl
 
-12.删除目录下所有文件包括子目录(bjchenxu)
+12. 删除目录下所有文件包括子目录(bjchenxu)
 rm -rf 目录名
 
 
-13查看系统信息(bjchenxu)
+13. 查看系统信息(bjchenxu)
 cat /proc/cpuinfo - CPU (i.e. vendor, Mhz, flags like mmx)
 cat /proc/interrupts - 中断
 cat /proc/ioports - 设备IO端口
@@ -993,20 +993,18 @@ uname -a - 看系统内核等信息
 
 
 
-15 如何配置让哪些服务启动
+15. 如何配置让哪些服务启动
 方法1 运行ntsysv或者setup命令，进入菜单进行配置
 方法2 chkconfig --list 显示服务
 chkconfig name on/off 打开/关闭“name”服务
 
-16查看文件夹大小
-
-du -sh uploadfile
-
+16. 查看文件夹大小
+    * du -sh uploadfile
 
 
-17查看磁盘使用情况
 
-df -hl
+17. 查看磁盘使用情况
+    * df -hl
 
 ```js
 cat file  // 从第一个字节开始查看文件
@@ -1028,7 +1026,8 @@ sdiff file1 file2	// 以对比的方式显示两个文件的不同
 ```
 -------------------------------------
 
-* vi file
+* vi file     
+
 操作  |	解析
   -- | --
    i | 进入编辑文本模式
