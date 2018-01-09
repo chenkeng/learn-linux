@@ -1039,8 +1039,22 @@ tar -cvf target.tar file  file1  将file 和file1 打包到target.tar文件
 zip file.zip  file
 zip -r file1.zip file1 dir1   将文件额目录压缩成一个zip格式的压缩包
 
+unzip file.zip   解压file.zip 压缩包
+unzip test.zip -d /tmp/   解压文件到/tmp/ 目录
 
 
+
+// yum 安装器
+yum -y install  [package]  下载并安装一个rpm包
+yum localinstall [package.rpm]   安装一个rpm包，使用你自己的软件仓库解决所有依赖关系
+yum -y update  更新当前系统中安装的所有rpm包
+yum update [package]	更新一个rpm包
+yum remove [package]	删除一个rpm包
+yum list	列出当前系统中安装的所有包
+yum search [package]	在rpm仓库中搜寻软件包
+yum clean [package]	清除缓存目录（/var/cache/yum）下的软件包
+yum clean headers	删除所有头文件
+yum clean all	删除所有缓存的包和头文件
 
 -------------------------------------
 
