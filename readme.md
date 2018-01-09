@@ -1024,6 +1024,24 @@ grep str -r /dir/*  // 在dir 目录及其子目录中查找字符串 str
 diff file1 file2	// 找出两个文件的不同处
 sdiff file1 file2	// 以对比的方式显示两个文件的不同
 ```
+
+// 压缩 文件
+
+bzip2  read.txt    压缩read.txt文件   read.txt.bz2
+bunzip2 read.txt.bz2   解压 read.txt.bz2
+gzip read.txt    read.txt.gz
+gunzip read.txt.gz   read.txt
+gzip -9 read.txt   最大程度压缩read.txt
+
+tar -cvf target.tar file    将file 文件打包成 target.tar
+tar -cvf target.tar file  file1  将file 和file1 打包到target.tar文件
+
+zip file.zip  file
+zip -r file1.zip file1 dir1   将文件额目录压缩成一个zip格式的压缩包
+
+
+
+
 -------------------------------------
 
 * vi file     
