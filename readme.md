@@ -1056,6 +1056,15 @@ yum clean [package]	清除缓存目录（/var/cache/yum）下的软件包
 yum clean headers	删除所有头文件
 yum clean all	删除所有缓存的包和头文件
 
+
+ifconfig eth0	显示一个以太网卡的配置
+ifconfig eth0 192.168.1.1 netmask 255.255.255.0	配置网卡的IP地址
+ifdown eth0	禁用 ‘eth0’ 网络设备
+ifup eth0	启用 ‘eth0’ 网络设备
+iwconfig eth1	显示一个无线网卡的配置
+iwlist scan	显示无线网络
+ip addr show	显示网卡的IP地址
+
 -------------------------------------
 
 * vi file     
