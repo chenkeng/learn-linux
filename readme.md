@@ -174,9 +174,6 @@ x
 15. 权限管理命令：chown
 
 功能描述：改变文件或目录的所有者
-
-
-
 命令英文原意：change file ownership
 
 命令所在路径：/bin/chown
@@ -967,16 +964,13 @@ chkconfig name on/off 打开/关闭“name”服务
 
 
 16. 查看文件夹大小
-
 du -sh uploadfile
 
 17. 查看磁盘使用情况
-
 df -hl
 
 12. 删除目录下所有文件包括子目录(bjchenxu)
 rm -rf 目录名
-
 
 13. 查看系统信息(bjchenxu)
 cat /proc/cpuinfo - CPU (i.e. vendor, Mhz, flags like mmx)
@@ -991,8 +985,6 @@ uname -a - 看系统内核等信息
 
  =================
 
-
-
 15. 如何配置让哪些服务启动
 方法1 运行ntsysv或者setup命令，进入菜单进行配置
 方法2 chkconfig --list 显示服务
@@ -1000,8 +992,6 @@ chkconfig name on/off 打开/关闭“name”服务
 
 16. 查看文件夹大小
     * du -sh uploadfile
-
-
 
 17. 查看磁盘使用情况
     * df -hl
