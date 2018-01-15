@@ -164,5 +164,78 @@ const cNameArr = Array.from(cName);
 // best
 [1, 2, 3].map(x => x * x);
 ```
+* 6.2 箭头函数取代Function.prototype.bind，不应再用 self/_this/that 绑定 this。
+
+```js
+// bad
+const self = this;
+const boundMethod = function(...params) {
+  return method.apply(self, params);
+}
+
+// acceptable
+const boundMethod = method.bind(this);
+
+// best
+const boundMethod = (...params) => method.apply(this, params);
+```
+* 6.3 所有配置项都应该集中在一个对象，放在最后一个参数，布尔值不可以直接作为参数。
+```js
+// bad
+function divide(a, b, option = false ) {
+}
+
+// good
+function divide(a, b, { option = false } = {}) {
+}
+```
+* 6.4 不要在函数体内使用 arguments 变量，使用 rest 运算符（...）代替。因为 rest 运算符显式表明你想要获取参数，而且 arguments 是一个类似数组的对象，而 rest 运算符可以提供一个真正的数组。
+
+```js
+// bad
+function concatenateAll() {
+  const args = Array.prototype.slice.call(arguments);
+  return args.join('');
+}
+
+// good
+function concatenateAll(...args) {
+  return args.join('');
+}
+```
+* 6.5 使用默认值语法设置函数参数的默认值。
+```js
+// bad
+function handleThings(opts) {
+  opts = opts || {};
+}
+
+// good
+function handleThings(opts = {}) {
+  // ...
+}
+```
+7. 注意区分 Object 和 Map，只有模拟现实世界的实体对象时，才使用 Object。如果只是需要key: value的数据结构，使用 Map 结构。因为 Map 有内建的遍历机制。
+```js
+let map = new Map(arr);
+
+for (let key of map.keys()) {
+  console.log(key);
+}
+
+for (let value of map.values()) {
+  console.log(value);
+}
+
+for (let item of map.entries()) {
+  console.log(item[0], item[1]);
+}
+```
+
+
+
+
+
+
 
 
