@@ -231,9 +231,82 @@ for (let item of map.entries()) {
   console.log(item[0], item[1]);
 }
 ```
+8. 用 Class，取代需要 prototype 的操作。因为 Class 的写法更简洁，更易于理解。
+```js
+// bad
+function Queue(contents=[]){
+  this._queue=[...contents];
+}
+Queue.prototype.pop=function(){
+  const value=this.queue[0];
+  this._queue.splice(0,1);
+  return value;
+}
 
+// good 
+class Queue{
+  constructor (contents=[])[
+    this._queue=[...contents];
+  ]
+  pop(){
+    const value=this._queue[0];
+    this._queue.splice(0,1);
+    return value;
+  }
+}
+```
+8.1 使用extends实现继承，因为这样更简单，不会有破坏instanceof运算的危险。
+```js
+// bad 
+const inherits=require('inherits);
+function PeekableQueue(contents){
+  Queue.apply(this,contents);
+}
+inherits(PeekableQueue,Queue);
+PeekableQueue.prototype.peek=function(){
+  return this._queue[0];
+}
 
+// good
+class PeekableQueue extends Queue{
+  return thhis._queue[0];
+}
 
+```
+9. Module 语法是 JavaScript 模块的标准写法，坚持使用这种写法。使用import取代require。
+```js
+// bad 
+const moduleA =require('moduleA');
+const func1=moduleA.func1;
+const func2=moduleB.func2;
+// good 
+import {func1,func2} from 'moduleA';
+
+```
+9.1 使用export取代module.exports。
+```js
+// commonJs  methods
+var React =require ('react);
+var Breadcrumbs=React.createClass({
+  render(){
+    return <nav />;
+  }
+})
+
+module.exports = Breadcrumbs;
+
+// Es6 methods
+
+import React from 'react';
+class Breadcrumbs extends React.Component{
+  render(){
+    return <nav />;
+  }
+};
+export default Breadcrumbs;
+
+如果模块只有一个输出值，就使用export default，如果模块有多个输出值，就不使用export default，export default与普通的export不要同时使用。
+```
 
 
 
