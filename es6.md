@@ -317,7 +317,22 @@ import * as myobject from './importModule';
 import myobject from './importModule';
 
 ```
+9.3 如果模块默认输出一个函数，函数名的首字母应该小写
+```js
+function makestyleGuide(){
 
+}
+export default makestyleGuide;
+```
+9.4 如果模块默认输出一个对象，对象名的首字母应该大写
+```js
+const StyleGuide={
+  es6:{
+
+  }
+};
+export default StyleGuide;
+```
 
 
 
