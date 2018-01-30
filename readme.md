@@ -11,8 +11,8 @@
          -a  |  显示所有文件，包括隐藏文件
          -l  |  详细信息显示
          -d  |  查看目录属性
-        * $ ls –a > dir.txt ← 将ls –a命令执行结果输出到dir.txt文件。
-        * $ ls –a >> dir.txt ← 将ls –a命令执行结果附加到dir.txt文件之后。  
+    * $ ls –a > dir.txt ← 将ls –a命令执行结果输出到dir.txt文件。
+    * $ ls –a >> dir.txt ← 将ls –a命令执行结果附加到dir.txt文件之后。  
 
 2.  文件处理命令：cd
   - 功能描述：切换目录
