@@ -174,9 +174,6 @@ x
 15. 权限管理命令：chown
 
 功能描述：改变文件或目录的所有者
-
-
-
 命令英文原意：change file ownership
 
 命令所在路径：/bin/chown
@@ -936,7 +933,7 @@ which bin
 
 13. grep，find
 grep:文本内容搜索;find:文件或者目录名以及权限属主等匹配搜索
-eg: grep success * 　　 /*查找当前目录下面所有文件里面含有success字符的文件
+eg: grep success * 　　 /* 查找当前目录下面所有文件里面含有success字符的文件
 
 14. kill 可以杀死某个正在进行或者已经是dest状态的进程
 eg; ps ax
@@ -952,7 +949,7 @@ eg: tar -zxvf nmap-3.45.tgz //将这个解压到nmap-3.45这个目录里
 
 
 
-14解压小全
+14. 解压小全
 tar -I或者bunzip2命令都可以解压.bz2文件
 tar xvfj example.tar.bz2
 tar xvfz example.tar.gz
@@ -960,25 +957,22 @@ tar xvfz example.tgz
 tar xvf example.tar
 unzip example.zip
 
-15 如何配置让哪些服务启动(天外闲云，q1208c)
+15. 如何配置让哪些服务启动(天外闲云，q1208c)
 方法1 运行ntsysv或者setup命令，进入菜单进行配置
 方法2 chkconfig --list 显示服务
 chkconfig name on/off 打开/关闭“name”服务
 
 
-16查看文件夹大小
-
+16. 查看文件夹大小
 du -sh uploadfile
 
-17查看磁盘使用情况
-
+17. 查看磁盘使用情况
 df -hl
 
-12.删除目录下所有文件包括子目录(bjchenxu)
+12. 删除目录下所有文件包括子目录(bjchenxu)
 rm -rf 目录名
 
-
-13查看系统信息(bjchenxu)
+13. 查看系统信息(bjchenxu)
 cat /proc/cpuinfo - CPU (i.e. vendor, Mhz, flags like mmx)
 cat /proc/interrupts - 中断
 cat /proc/ioports - 设备IO端口
@@ -991,19 +985,84 @@ uname -a - 看系统内核等信息
 
  =================
 
-
-
-15 如何配置让哪些服务启动
+15. 如何配置让哪些服务启动
 方法1 运行ntsysv或者setup命令，进入菜单进行配置
 方法2 chkconfig --list 显示服务
 chkconfig name on/off 打开/关闭“name”服务
 
-16查看文件夹大小
+16. 查看文件夹大小
+    * du -sh uploadfile
 
-du -sh uploadfile
+17. 查看磁盘使用情况
+    * df -hl
+
+```js
+cat file  // 从第一个字节开始查看文件
+tac file // 从最后一行开始反向查看一个文件
+
+head -2 file // 查看一个文件的前2行
+tail -3 file // 查看一个文件的最后3行
+
+more file // 查看一个发文件的内容
+vi file // 打开并浏览一个文件
+
+// 查找字符串
+grep  str file // 在file 中查找 str 字符串 。 匹配所有的
+grep ^str file // 在file 中查找以str 开头的行
+grep [0-9] file1 // 查找file 中所有包含数字的行
+grep str -r /dir/*  // 在dir 目录及其子目录中查找字符串 str
+diff file1 file2	// 找出两个文件的不同处
+sdiff file1 file2	// 以对比的方式显示两个文件的不同
+```
+
+// 压缩 文件
+
+bzip2  read.txt    压缩read.txt文件   read.txt.bz2
+bunzip2 read.txt.bz2   解压 read.txt.bz2
+gzip read.txt    read.txt.gz
+gunzip read.txt.gz   read.txt
+gzip -9 read.txt   最大程度压缩read.txt
+
+tar -cvf target.tar file    将file 文件打包成 target.tar
+tar -cvf target.tar file  file1  将file 和file1 打包到target.tar文件
+
+zip file.zip  file
+zip -r file1.zip file1 dir1   将文件额目录压缩成一个zip格式的压缩包
+
+unzip file.zip   解压file.zip 压缩包
+unzip test.zip -d /tmp/   解压文件到/tmp/ 目录
 
 
 
-17查看磁盘使用情况
+// yum 安装器
+yum -y install  [package]  下载并安装一个rpm包
+yum localinstall [package.rpm]   安装一个rpm包，使用你自己的软件仓库解决所有依赖关系
+yum -y update  更新当前系统中安装的所有rpm包
+yum update [package]	更新一个rpm包
+yum remove [package]	删除一个rpm包
+yum list	列出当前系统中安装的所有包
+yum search [package]	在rpm仓库中搜寻软件包
+yum clean [package]	清除缓存目录（/var/cache/yum）下的软件包
+yum clean headers	删除所有头文件
+yum clean all	删除所有缓存的包和头文件
 
-df -hl
+
+ifconfig eth0	显示一个以太网卡的配置
+ifconfig eth0 192.168.1.1 netmask 255.255.255.0	配置网卡的IP地址
+ifdown eth0	禁用 ‘eth0’ 网络设备
+ifup eth0	启用 ‘eth0’ 网络设备
+iwconfig eth1	显示一个无线网卡的配置
+iwlist scan	显示无线网络
+ip addr show	显示网卡的IP地址
+
+-------------------------------------
+
+* vi file     
+
+操作  |	解析
+  -- | --
+   i | 进入编辑文本模式
+ Esc | 退出编辑文本模式
+ :w	| 保存当前修改
+ :q	| 不保存退出vi
+:wq | 保存当前修改并退出vi
