@@ -3,3 +3,4 @@ node_modules
 .xml
 .eslintrc
 index.js
+.vscode-upload
