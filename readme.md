@@ -11,8 +11,8 @@
          -a  |  显示所有文件，包括隐藏文件
          -l  |  详细信息显示
          -d  |  查看目录属性
-        * $ ls –a > dir.txt ← 将ls –a命令执行结果输出到dir.txt文件。
-        * $ ls –a >> dir.txt ← 将ls –a命令执行结果附加到dir.txt文件之后。  
+    * $ ls –a > dir.txt ← 将ls –a命令执行结果输出到dir.txt文件。
+    * $ ls –a >> dir.txt ← 将ls –a命令执行结果附加到dir.txt文件之后。  
 
 2.  文件处理命令：cd
   - 功能描述：切换目录
@@ -174,9 +174,6 @@ x
 15. 权限管理命令：chown
 
 功能描述：改变文件或目录的所有者
-
-
-
 命令英文原意：change file ownership
 
 命令所在路径：/bin/chown
@@ -967,16 +964,13 @@ chkconfig name on/off 打开/关闭“name”服务
 
 
 16. 查看文件夹大小
-
 du -sh uploadfile
 
 17. 查看磁盘使用情况
-
 df -hl
 
 12. 删除目录下所有文件包括子目录(bjchenxu)
 rm -rf 目录名
-
 
 13. 查看系统信息(bjchenxu)
 cat /proc/cpuinfo - CPU (i.e. vendor, Mhz, flags like mmx)
@@ -991,8 +985,6 @@ uname -a - 看系统内核等信息
 
  =================
 
-
-
 15. 如何配置让哪些服务启动
 方法1 运行ntsysv或者setup命令，进入菜单进行配置
 方法2 chkconfig --list 显示服务
@@ -1000,8 +992,6 @@ chkconfig name on/off 打开/关闭“name”服务
 
 16. 查看文件夹大小
     * du -sh uploadfile
-
-
 
 17. 查看磁盘使用情况
     * df -hl
@@ -1024,6 +1014,47 @@ grep str -r /dir/*  // 在dir 目录及其子目录中查找字符串 str
 diff file1 file2	// 找出两个文件的不同处
 sdiff file1 file2	// 以对比的方式显示两个文件的不同
 ```
+
+// 压缩 文件
+
+bzip2  read.txt    压缩read.txt文件   read.txt.bz2
+bunzip2 read.txt.bz2   解压 read.txt.bz2
+gzip read.txt    read.txt.gz
+gunzip read.txt.gz   read.txt
+gzip -9 read.txt   最大程度压缩read.txt
+
+tar -cvf target.tar file    将file 文件打包成 target.tar
+tar -cvf target.tar file  file1  将file 和file1 打包到target.tar文件
+
+zip file.zip  file
+zip -r file1.zip file1 dir1   将文件额目录压缩成一个zip格式的压缩包
+
+unzip file.zip   解压file.zip 压缩包
+unzip test.zip -d /tmp/   解压文件到/tmp/ 目录
+
+
+
+// yum 安装器
+yum -y install  [package]  下载并安装一个rpm包
+yum localinstall [package.rpm]   安装一个rpm包，使用你自己的软件仓库解决所有依赖关系
+yum -y update  更新当前系统中安装的所有rpm包
+yum update [package]	更新一个rpm包
+yum remove [package]	删除一个rpm包
+yum list	列出当前系统中安装的所有包
+yum search [package]	在rpm仓库中搜寻软件包
+yum clean [package]	清除缓存目录（/var/cache/yum）下的软件包
+yum clean headers	删除所有头文件
+yum clean all	删除所有缓存的包和头文件
+
+
+ifconfig eth0	显示一个以太网卡的配置
+ifconfig eth0 192.168.1.1 netmask 255.255.255.0	配置网卡的IP地址
+ifdown eth0	禁用 ‘eth0’ 网络设备
+ifup eth0	启用 ‘eth0’ 网络设备
+iwconfig eth1	显示一个无线网卡的配置
+iwlist scan	显示无线网络
+ip addr show	显示网卡的IP地址
+
 -------------------------------------
 
 * vi file     
