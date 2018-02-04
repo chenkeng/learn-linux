@@ -161,7 +161,75 @@ const objectSymbols = Object.getOwnPropertySymbols(obj);
 objectSymbols
 // [Symbol(a), Symbol(b)]
 ```
+```js 
 
+const obj = {};
+
+let foo = Symbol("foo");
+
+Object.defineProperty(obj, foo, {
+  value: "foobar",
+});
+
+for (let i in obj) {
+  console.log(i); // 无输出
+}
+
+Object.getOwnPropertyNames(obj)
+// []
+
+Object.getOwnPropertySymbols(obj)
+// [Symbol(foo)]
+```
+
+13. 另一个新的 API，Reflect.ownKeys方法可以返回所有类型的键名，包括常规键名和 Symbol 键名。
+
+```js
+let obj = {
+  [Symbol('my_key')]: 1,
+  enum: 2,
+  nonEnum: 3
+};
+
+Reflect.ownKeys(obj)
+//  ["enum", "nonEnum", Symbol(my_key)]
+```
+
+
+14. Symbol.for()  搜索有没有以该参数作为名称的 Symbol 值。如果有，就返回这个 Symbol 值，否则就新建并返回一个以该字符串为名称的 Symbol 值。
+```js
+let s1 = Symbol.for('foo');
+let s2 = Symbol.for('foo');
+
+s1 === s2 // true
+//************************
+Symbol.for("bar") === Symbol.for("bar")
+// true
+
+Symbol("bar") === Symbol("bar")
+// false
+
+let s1 = Symbol.for("foo");
+Symbol.keyFor(s1) // "foo"
+
+let s2 = Symbol("foo");
+Symbol.keyFor(s2) // undefined
+/*
+由于Symbol()写法没有登记机制，所以每次调用都会返回一个不同的值。
+
+Symbol.keyFor方法返回一个已登记的 Symbol 类型值的key。
+*/
+```
+15. Symbol.for为 Symbol 值登记的名字，是全局环境的，可以在不同的 iframe 或 service worker 中取到同一个值。
+```js
+iframe = document.createElement('iframe');
+iframe.src = String(window.location);
+document.body.appendChild(iframe);
+
+iframe.contentWindow.Symbol.for('foo') === Symbol.for('foo')
+// true
+
+```
 
 
 
