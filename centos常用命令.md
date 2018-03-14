@@ -30,7 +30,9 @@ cp -r dir1 dir2        [-r表示递归，将dir1代表的文件夹及里面的�
 mv                     [移动文件和改文件名] 如：mv /home/Test.js /(表示将home下的Test.js文件移动到根目录下) 
 mv /Test.js /Hello.js(表示将Test.js文件名改成Hello.js)
 rm                     [删除文件和目录] 如：rm /Test.js (将根目录下的Test.js删除)[注：如果该文件是个文件夹则删除不了]
-rm -rf *               [(-r表示递归、f表示强制删除)删除所有内容，包括目录和文件夹] 如：rm -rf /home/superhan(强制删除home下的superhan文件夹)。*一定要注意 rm -rf / home 不要手快有空格*
+rm -rf *               [(-r表示递归、f表示强制删除)删除所有内容，包括目录和文件夹] 如：rm -rf /home/superhan(强制删除home下的superhan文件夹)。
+
+*一定要注意 rm -rf / home 不要手快有空格*
 
 ln                     [建立符号链接，类似于windows中的快捷方式(需root权限或相应用户权限)]
 ln -s 源目标 目的目标    如：ln -s /etc/inittab /inittab(这样就会在根目录下建立一个inittab链接，该链接指向了etc目录下的inittab文件)
@@ -51,7 +53,7 @@ find                   [搜索文件及目录] 如：find /home -name Test.js (�
 如：ls -l /etc> a.txt (将etc下面的列表信息写入到a.txt文件中[覆写]，如果之前不存在a.txt文件，则创建a.txt文件然后将信息写进去，
 如果存在a.txt文件，则会覆盖掉之前的信息)
 ls -al /etc>> aa.txt (将etc下面的列表信息追加到aa.txt文件信息后面)
-从文件中输入信息 aaa < bbb
+< 这个命令没搞懂怎么用
 
 ```
 
