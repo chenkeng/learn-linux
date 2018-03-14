@@ -46,14 +46,16 @@ init级别  |	systemctl target
 
 ### 设置运行级别
 
-命令格式：
-systemctl [command] [unit.target]
+命令格式：  
+systemctl [command] [unit.target]   
+
 参数详解：
-command:
-get-default :取得当前的target
-set-default :设置指定的target为默认的运行级别
-isolate :切换到指定的运行级别
-unit.target :表中列出的运行级别   
+command:   
+
+* get-default :取得当前的target
+* set-default :设置指定的target为默认的运行级别
+* isolate :切换到指定的运行级别
+* unit.target :表中列出的运行级别   
 
 systemctl	| 命令 | 说明
 --|--|--
