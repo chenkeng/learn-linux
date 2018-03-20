@@ -22,3 +22,17 @@ yum groupinstall "GNOME Desktop"
 ```
 startx
 ```
+
+
+5. 卸载安装的软件
+```js
+// 方法一：
+yum -y remove [软件包名字]
+// 方法二
+// 如果是rpm包
+rpm -e [软件包名字]
+// 方法三
+// tar 包
+make uninstall [软件包名字]
+```
+
