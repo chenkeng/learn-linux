@@ -26,6 +26,8 @@ startx
 
 5. 卸载安装的软件
 ```js
+//首先查询安装包：
+rpm -qa|grep mysql
 // 方法一：
 yum -y remove [软件包名字]
 // 方法二
