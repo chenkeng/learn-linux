@@ -4,6 +4,7 @@
 curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
 
 source ~/.bash_profile
+source ~/.profile # ubuntu16.04  亲测用这个
 ```
 2. 列出所有版本（远程）
 ```js
