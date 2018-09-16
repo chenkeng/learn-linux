@@ -118,3 +118,9 @@ To github.com/chenkeng/learnJava.git
  - [deleted]         V0.9
 
 ```
+
+
+    切换到标签版本
+```js
+git checkout v1.0
+```
